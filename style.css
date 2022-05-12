@@ -1,0 +1,70 @@
+* {
+	box-sizing: border-box;
+}
+@keyframes buttonChange {
+	from {
+		background-color: rgb(247, 118, 118);
+	}
+	to {
+		background-color: rgb(215, 104, 104);
+		transform: scale(0.98);
+	}
+}
+body {
+	background-image: linear-gradient(
+		to bottom,
+		#a99999,
+		#b19c97,
+		#b79f94,
+		#baa490,
+		#b9aa8d,
+		#bbab8e,
+		#bcac8f,
+		#bead90,
+		#c1a997,
+		#bfa79e,
+		#b9a6a5,
+		#b1a6a8
+	);
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+}
+h1 {
+	font-size: 2rem;
+}
+.container {
+	margin: 50px 50px;
+	/* border: 1px solid black; */
+	height: 70vh;
+	width: 90vw;
+	text-align: center;
+}
+.container .gameBoard {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.container .gameBoard img {
+	width: 400px;
+	height: 400px;
+	margin: 0;
+}
+.container .gameBoard .result {
+	margin-left: 30px;
+	text-align: center;
+}
+button {
+	font-size: 1rem;
+	cursor: pointer;
+	min-width: 80px;
+	min-height: 50px;
+	border-radius: 2rem;
+	background-color: rgb(247, 118, 118);
+}
+button:focus {
+	animation-name: buttonChange;
+	animation-duration: 0.2s;
+}
