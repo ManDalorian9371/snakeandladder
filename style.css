@@ -53,7 +53,7 @@ h1 {
 	margin: 0;
 }
 .container .gameBoard .result {
-	margin-left: 30px;
+	margin: 30px;
 	text-align: center;
 }
 button {
@@ -67,4 +67,8 @@ button {
 button:focus {
 	animation-name: buttonChange;
 	animation-duration: 0.2s;
+}
+button:disabled {
+	background-color: gray;
+	cursor: default;
 }
