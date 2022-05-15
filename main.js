@@ -61,10 +61,10 @@ function makeSnakeLadder(pos, p){
 	if (curr != -1) {
 		Apos = snakeAndLadderfinal[curr];
 		if (Apos > pos) {
-			popup.innerHTML = ` <h2> <strong>${p.innerHTML}</strong>  Got The Ladder From ${pos} To ${Apos} </h2> <button onclick="removePop()"> OK </button>`;
+			popup.innerHTML = ` <h2> <strong>${p.innerHTML}</strong>  Took The Ladder From ${pos} To ${Apos} </h2> <button onclick="removePop()"> OK </button>`;
 			popup.classList.add('open');
 		} else {
-			popup.innerHTML = ` <h2> <strong>${p.innerHTML}</strong>  Has Bitten By Snake ! Droped From ${pos} To ${Apos} </h2> <button onclick="removePop()"> OK </button>`;
+			popup.innerHTML = ` <h2> <strong>${p.innerHTML}</strong>  Has Been Bitten By Snake ! Droped From ${pos} To ${Apos} </h2> <button onclick="removePop()"> OK </button>`;
 			popup.classList.add('open');
 		}
 	} else {
