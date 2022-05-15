@@ -16,12 +16,15 @@
     <h1>Snake & Ladder </h1>
     <section class="gameBoard">
         <div class="result">
-              <h3 class="p1">Player 1</h3>
+            <div>
+                <h3 class="p1">Player 1</h3>
             <button class="dice1 player2">Dice</button>
+             </div>
+              
           
             <p>Your dices are :</p>
                 <span class="resDices1"></span>
-            <p>You are in position :</p>
+            <p>You are in position:</p>
             <span class="resPosition1">0</span>
         </div>
         <div class="img">
@@ -35,12 +38,15 @@
         </div>
         
         <div class="result">
-            <h3 class="p2" >Player 2</h3>
-            <button class="dice2 ">Dice</button>
+            <div>
+                 <h3 class="p2" >Player 2</h3>
+                 <button class="dice2 ">Dice</button>
+            </div>
+           
             
             <p>Your dices are :</p>
                 <span class="resDices2"></span>
-            <p>You are in position :</p>
+            <p>You are in position:</p>
             <span class="resPosition2">0</span>
         </div>
     </section>
@@ -65,16 +71,18 @@
                 <button  id="start" type="button" disabled>Start</button>
         </div>
 
-        <audio id="backMusic"  autoplay="true"  loop="infinite">
+        <audio id="backMusic"    loop="infinite">
             <source src="sounds/1.mp3" type="audio/mp3" >
         </audio>
         <audio id="vicMusic">
             <source src="sounds/2.mp3" type="audio/mp3" >
         </audio>
-        <div class="icon">
+        <div class="icon hidden">
             <img src="images/soundOn.png" class="iconImg" alt="">
         </div>
-
+        <div class="resume">
+            <h2>Created By Mostafa Rafati</h2>
+        </div>
     <script type="text/javascript" src="main.js"></script>
 </body>
 </html>

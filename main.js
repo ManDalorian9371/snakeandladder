@@ -16,6 +16,7 @@ const namesPlayers = document.querySelectorAll('.namesPlayers');
 const startBtn = document.querySelector('#start');
 const bead1 = document.getElementById('bead1');
 const bead2 = document.getElementById('bead2');
+
 icon.addEventListener('click', () => {
 	if (bMusic.paused) {
 		icon.src = 'images/soundOn.png';
@@ -98,6 +99,7 @@ startBtn.addEventListener('click', () => {
 	popup.style.width = '300px';
 	popup.style.height = '300px';
 	bMusic.play();
+	document.querySelector('.icon').classList.remove('hidden');
 	popup.classList.remove('open');
 });
 
