@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
     <title>Snake and Ladder</title>
 </head>
 <body>
@@ -14,17 +17,26 @@
     <section class="gameBoard">
         <div class="result">
               <h3 class="p1">Player 1</h3>
-            <button class="dice1">Dice</button>
+            <button class="dice1 player2">Dice</button>
           
             <p>Your dices are :</p>
                 <span class="resDices1"></span>
             <p>You are in position :</p>
             <span class="resPosition1">0</span>
         </div>
-        <img src="images/snakesandladdersboard.jpg" alt="">
+        <div class="img">
+            <img src="images/snakesandladdersboard.jpg" alt="">
+            <span >
+                    <img id="bead1" src="images/bead1.png" alt="">
+            </span>
+            <span >
+                <img id="bead2" src="images/bead2.png" alt="">
+            </span>
+        </div>
+        
         <div class="result">
             <h3 class="p2" >Player 2</h3>
-            <button class="dice2">Dice</button>
+            <button class="dice2 ">Dice</button>
             
             <p>Your dices are :</p>
                 <span class="resDices2"></span>
@@ -33,6 +45,35 @@
         </div>
     </section>
 </section>
+    
+        <div id="popup" class="popup ">
+            <h1>Welcome To Snake & Ladder Game !</h1>
+            <div class="firstinput">
+                <label for="p1name">Enter Player 1 name : </label>
+                <input id="p1name"  class="namesPlayers" placeholder="Player 1" type="text">
+            </div>
+            <div class="secondinput">
+                <label for="p2name">Enter Player 2 name : </label>
+                <input id="p2name" class="namesPlayers" placeholder="Player 2" type="text">
+            </div>
+                
+                
+                <p>for start one player can toss and after that <br>
+                   its one turn for each player to toss except <br>
+                   the player got double 6 ! in this case he/she <br>
+                   have bounus toss !</p>
+                <button  id="start" type="button" disabled>Start</button>
+        </div>
+
+        <audio id="backMusic"  autoplay="true"  loop="infinite">
+            <source src="sounds/1.mp3" type="audio/mp3" >
+        </audio>
+        <audio id="vicMusic">
+            <source src="sounds/2.mp3" type="audio/mp3" >
+        </audio>
+        <div class="icon">
+            <img src="images/soundOn.png" class="iconImg" alt="">
+        </div>
 
     <script type="text/javascript" src="main.js"></script>
 </body>

@@ -1,36 +1,18 @@
 * {
 	box-sizing: border-box;
 }
-@keyframes buttonChange {
-	from {
-		background-color: rgb(247, 118, 118);
-	}
-	to {
-		background-color: rgb(215, 104, 104);
-		transform: scale(0.98);
-	}
-}
+
 body {
-	background-image: linear-gradient(
-		to bottom,
-		#a99999,
-		#b19c97,
-		#b79f94,
-		#baa490,
-		#b9aa8d,
-		#bbab8e,
-		#bcac8f,
-		#bead90,
-		#c1a997,
-		#bfa79e,
-		#b9a6a5,
-		#b1a6a8
-	);
+	background-image: radial-gradient(circle, #d6dc23, #dcc514, #ddaf10, #db9816, #d6831f);
 	background-repeat: no-repeat;
 	background-size: cover;
 	height: 100vh;
 	display: flex;
 	justify-content: center;
+	font-family: 'jua', sans-serif;
+	position: relative;
+	color: white;
+	text-shadow: 1px 2px 2px rgb(0, 0, 0);
 }
 h1 {
 	font-size: 2rem;
@@ -47,26 +29,73 @@ h1 {
 	justify-content: center;
 	align-items: center;
 }
-.container .gameBoard img {
+.container .gameBoard .img img {
 	width: 400px;
 	height: 400px;
 	margin: 0;
 }
+.container .gameBoard .img {
+	position: relative;
+	width: 400px;
+	height: 400px;
+}
+
+.container .gameBoard .img #bead1 {
+	position: absolute;
+
+	height: 25px;
+	width: 25px;
+	bottom: 20px;
+	left: 20px;
+	transform: translate(-47%, 40%);
+	transition: all 0.5s steps(12);
+}
+.container .gameBoard .img #bead2 {
+	position: absolute;
+
+	height: 25px;
+	width: 25px;
+	bottom: 20px;
+	left: 20px;
+	transform: translate(-47%, 40%);
+	transition: all 0.5s steps(12);
+}
+
 .container .gameBoard .result {
 	margin: 30px;
+
 	text-align: center;
 }
+.container .gameBoard .result > h3 {
+	color: rgb(17, 137, 235);
+	font-weight: 700;
+	font-size: 25px;
+	text-shadow: 1px 2px 1px rgb(0, 0, 0);
+	margin-bottom: 10px;
+}
 button {
+	color: white;
 	font-size: 1rem;
 	cursor: pointer;
 	min-width: 80px;
 	min-height: 50px;
 	border-radius: 2rem;
-	background-color: rgb(247, 118, 118);
+	border: 1px solid rgb(62, 62, 62);
+	background-color: rgb(84, 147, 29);
+	transition: all 0.2s ease-in;
 }
 button:focus {
-	animation-name: buttonChange;
-	animation-duration: 0.2s;
+	background-color: rgb(4, 56, 4);
+	transform: scale(0.98);
+}
+button:hover {
+	background-color: rgb(17, 114, 17);
+}
+button.player2 {
+	background-color: rgb(178, 3, 3);
+}
+button.player2:hover {
+	background-color: rgb(139, 14, 14);
 }
 button:disabled {
 	background-color: gray;
@@ -75,4 +104,71 @@ button:disabled {
 span img {
 	max-width: 30px;
 	max-height: 30px;
+}
+
+.popup {
+	text-align: center;
+	color: orange;
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 50px;
+	width: 900px;
+	height: 80vh;
+	background-color: rgb(118, 18, 188);
+	top: 0;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(0.1);
+	border-radius: 1rem;
+	border: 2px orange solid;
+	visibility: hidden;
+	transition: all 0.3s ease-in;
+}
+
+.popup input {
+	max-width: 150px;
+	min-height: 30px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	background-color: rgb(248, 228, 204);
+}
+
+.popup .firstinput {
+	display: flex;
+	flex-direction: column;
+	margin: 20px auto;
+}
+.popup .secondinput {
+	display: flex;
+	flex-direction: column;
+}
+.popup label {
+	color: rgb(255, 255, 255);
+}
+.popup.open {
+	visibility: visible;
+	top: 50%;
+	transform: translate(-50%, -50%) scale(1);
+}
+strong {
+	color: rgb(190, 36, 128);
+}
+
+strong > button {
+	background-color: rgb(215, 212, 16);
+	color: rgb(0, 0, 0);
+	font-family: 'dua', sans-serif;
+}
+
+div.icon {
+	position: absolute;
+	top: 50px;
+	right: 100px;
+	cursor: pointer;
+}
+div.icon img {
+	height: 50px;
+	width: 50px;
 }
