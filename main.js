@@ -118,32 +118,32 @@ dicePlayer1.addEventListener('click', async () => {
 		bMusic.pause();
 		wMusic.play();
 		await (position1 = makeSnakeLadder(100, p1));
-	}
-
-	let dice1 = randomDice();
-	let dice2 = randomDice();
-	resDices1.innerHTML = ` <img src="images/dice${dice1}.png"> and <img src="images/dice${dice2}.png">`;
-	if (dice1 + dice2 + position1 === 100) {
-		gameEnds = true;
-		bMusic.pause();
-		wMusic.play();
-		await (position1 = makeSnakeLadder(100, p1));
 	} else {
-		if (dice1 + dice2 + position1 > 100) {
-			position1 = 100 - (dice1 + dice2 + position1 - 100);
+		let dice1 = randomDice();
+		let dice2 = randomDice();
+		resDices1.innerHTML = ` <img src="images/dice${dice1}.png"> and <img src="images/dice${dice2}.png">`;
+		if (dice1 + dice2 + position1 === 100) {
+			gameEnds = true;
+			bMusic.pause();
+			wMusic.play();
+			await (position1 = makeSnakeLadder(100, p1));
 		} else {
-			position1 += dice1 + dice2;
+			if (dice1 + dice2 + position1 > 100) {
+				position1 = 100 - (dice1 + dice2 + position1 - 100);
+			} else {
+				position1 += dice1 + dice2;
+			}
+
+			position1 = makeSnakeLadder(position1, p1);
+			await move(position1, bead1);
 		}
 
-		position1 = makeSnakeLadder(position1, p1);
-		await move(position1, bead1);
-	}
+		resPosition1.innerHTML = position1;
 
-	resPosition1.innerHTML = position1;
-
-	if (!(dice1 === 6 && dice2 === 6)) {
-		dicePlayer2.disabled = false;
-		dicePlayer1.disabled = true;
+		if (!(dice1 === 6 && dice2 === 6)) {
+			dicePlayer2.disabled = false;
+			dicePlayer1.disabled = true;
+		}
 	}
 });
 dicePlayer2.addEventListener('click', async () => {
