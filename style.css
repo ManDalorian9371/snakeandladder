@@ -72,3 +72,7 @@ button:disabled {
 	background-color: gray;
 	cursor: default;
 }
+span img {
+	max-width: 30px;
+	max-height: 30px;
+}

@@ -29,7 +29,7 @@ dicePlayer1.addEventListener('click', () => {
 
 	let dice1 = randomDice();
 	let dice2 = randomDice();
-	resDices1.innerHTML = `${dice1} and ${dice2}`;
+	resDices1.innerHTML = ` <img src="images/dice${dice1}.png"> and <img src="images/dice${dice2}.png">`;
 	if (dice1 + dice2 + position1 === 100) {
 		gameEnds = true;
 		position1 = `${p1.innerHTML} HAVE FOUND THE TREASURE !`;
@@ -140,7 +140,7 @@ dicePlayer2.addEventListener('click', () => {
 
 	let dice1 = randomDice();
 	let dice2 = randomDice();
-	resDices2.innerHTML = `${dice1} and ${dice2}`;
+	resDices2.innerHTML = ` <img src="images/dice${dice1}.png"> and <img src="images/dice${dice2}.png">`;
 	if (dice1 + dice2 + position2 === 100) {
 		gameEnds = true;
 		position2 = `${p2.innerHTML} HAVE FOUND THE TREASURE !`;
