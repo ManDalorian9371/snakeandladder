@@ -9,10 +9,10 @@ const p2 = document.querySelector('.p2');
 const p1t = prompt('player 1 name ?');
 const p2t = prompt('player 2 name ?');
 console.log(p1t, p2t);
-if (p1t != '') {
+if (p1t != '' && p1t != undefined) {
 	p1.innerHTML = p1t;
 }
-if (p2t != '') {
+if (p2t != '' && p2t != undefined) {
 	p2.innerHTML = p2t;
 }
 let position1 = 0;
