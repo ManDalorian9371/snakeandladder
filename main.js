@@ -29,25 +29,42 @@ icon.addEventListener('click', () => {
 
 let boardSqures = [ ...Array(100) ].map((x, i) => ++i);
 boardSqures = boardSqures.map((x, i, a) => {
-	x = [ 20 + 40 * Math.floor(x / 10.01) ];
-	if (Math.ceil(a[i] / 9.99) % 2 === 0) {
-		if (a[i] - Math.floor(a[i] / 10) * 10 != 0) {
-			x.push(380 - 40 * (a[i] - Math.floor(a[i] / 10) * 10 - 1));
+	if (document.getElementById('bordImg').width === 400) {
+		x = [ 20 + 40 * Math.floor(x / 10.01) ];
+		if (Math.ceil(a[i] / 9.99) % 2 === 0) {
+			if (a[i] - Math.floor(a[i] / 10) * 10 != 0) {
+				x.push(380 - 40 * (a[i] - Math.floor(a[i] / 10) * 10 - 1));
+			} else {
+				x.push(380);
+			}
 		} else {
-			x.push(380);
+			if (a[i] - Math.floor(a[i] / 10) * 10 != 0) {
+				x.push(20 + 40 * (a[i] - Math.floor(a[i] / 10) * 10 - 1));
+			} else {
+				x.push(20);
+			}
 		}
-	} else {
-		if (a[i] - Math.floor(a[i] / 10) * 10 != 0) {
-			x.push(20 + 40 * (a[i] - Math.floor(a[i] / 10) * 10 - 1));
+
+		return x;
+	} else if (document.getElementById('bordImg').width === 300) {
+		x = [ 16 + 30 * Math.floor(x / 10.01) ];
+		if (Math.ceil(a[i] / 9.99) % 2 === 0) {
+			if (a[i] - Math.floor(a[i] / 10) * 10 != 0) {
+				x.push(286 - 30 * (a[i] - Math.floor(a[i] / 10) * 10 - 1));
+			} else {
+				x.push(286);
+			}
 		} else {
-			x.push(20);
+			if (a[i] - Math.floor(a[i] / 10) * 10 != 0) {
+				x.push(16 + 30 * (a[i] - Math.floor(a[i] / 10) * 10 - 1));
+			} else {
+				x.push(16);
+			}
 		}
+
+		return x;
 	}
-
-	return x;
 });
-
-console.log(boardSqures);
 
 const snakeAndLadderInit = [ 2, 7, 8, 15, 16, 21, 28, 36, 46, 49, 51, 62, 64, 71, 74, 78, 87, 89, 92, 95, 99 ];
 const snakeAndLadderfinal = [ 38, 14, 31, 26, 6, 42, 84, 44, 25, 11, 67, 19, 60, 91, 53, 98, 94, 68, 88, 75, 80 ];
@@ -129,7 +146,11 @@ dicePlayer1.addEventListener('click', async () => {
 			await (position1 = makeSnakeLadder(100, p1));
 		} else {
 			if (dice1 + dice2 + position1 > 100) {
-				position1 = 100 - (dice1 + dice2 + position1 - 100);
+				if (position1 + dice1 === 100 || position1 + dice2 === 100) {
+					position1 = makeSnakeLadder(100, p1);
+				} else {
+					position1 = position1;
+				}
 			} else {
 				position1 += dice1 + dice2;
 			}
@@ -161,7 +182,11 @@ dicePlayer2.addEventListener('click', async () => {
 		await (position2 = makeSnakeLadder(100, p2));
 	} else {
 		if (dice1 + dice2 + position2 > 100) {
-			position2 = 100 - (dice1 + dice2 + position2 - 100);
+			if (position2 + dice1 === 100 || position2 + dice2 === 100) {
+				position2 = makeSnakeLadder(100, p2);
+			} else {
+				position2 = position2;
+			}
 		} else {
 			position2 += dice1 + dice2;
 		}

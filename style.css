@@ -184,12 +184,29 @@ div.resume {
 	text-align: center;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
 	* {
 		font-size: small;
 	}
-	h1 {
-		margin: 10px auto 50px auto;
+	body {
+		height: 87vh;
+	}
+	h1,
+	h2,
+	h3 {
+		margin: 0 auto;
+		font-size: 15px;
+		padding-top: 20px;
+	}
+	.popup {
+		height: 50vh;
+	}
+	.popup .firstinput,
+	.popup .secondinput {
+		margin: 2px auto;
+	}
+	.result {
+		padding-bottom: 20px;
 	}
 	.container .gameBoard .img > img {
 		width: 300px;
@@ -202,8 +219,12 @@ div.resume {
 		align-items: center;
 		font-size: 0.9rem;
 	}
-	.container * {
-		margin: 2px;
+	.icon {
+		width: 8vw;
+		height: 8vw;
+	}
+	.container {
+		margin: 10px;
 	}
 	.container .gameBoard {
 		display: flex;
@@ -218,21 +239,21 @@ div.resume {
 	}
 	.container .gameBoard .img #bead1 {
 		position: absolute;
-		visibility: hidden;
+
 		height: 15px;
 		width: 15px;
-		bottom: 20px;
-		left: 20px;
+		bottom: 16px;
+		left: 16px;
 		transform: translate(-47%, 40%);
 		transition: all 0.5s steps(12);
 	}
 	.container .gameBoard .img #bead2 {
 		position: absolute;
-		visibility: hidden;
+
 		height: 15px;
 		width: 15px;
-		bottom: 20px;
-		left: 20px;
+		bottom: 16px;
+		left: 16px;
 		transform: translate(-47%, 40%);
 		transition: all 0.5s steps(12);
 	}
