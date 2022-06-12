@@ -147,6 +147,9 @@ dicePlayer1.addEventListener('click', async () => {
 		} else {
 			if (dice1 + dice2 + position1 > 100) {
 				if (position1 + dice1 === 100 || position1 + dice2 === 100) {
+					gameEnds = true;
+					bMusic.pause();
+					wMusic.play();
 					position1 = makeSnakeLadder(100, p1);
 				} else {
 					position1 = position1;
@@ -183,6 +186,9 @@ dicePlayer2.addEventListener('click', async () => {
 	} else {
 		if (dice1 + dice2 + position2 > 100) {
 			if (position2 + dice1 === 100 || position2 + dice2 === 100) {
+				gameEnds = true;
+				bMusic.pause();
+				wMusic.play();
 				position2 = makeSnakeLadder(100, p2);
 			} else {
 				position2 = position2;
